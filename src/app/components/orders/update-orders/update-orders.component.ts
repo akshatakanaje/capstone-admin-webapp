@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateOrdersComponent implements OnInit {
 
+  updation: boolean = false;
+  loader: boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {

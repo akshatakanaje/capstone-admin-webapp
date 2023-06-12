@@ -9,6 +9,7 @@ import { UpdateOrdersComponent } from './components/orders/update-orders/update-
 import { AddProductsComponent } from './components/products/add-products/add-products.component';
 import { ProductsComponent } from './components/products/products.component';
 import { UpdateProductsComponent } from './components/products/update-products/update-products.component';
+import { ViewProductsComponent } from './components/products/view-products/view-products.component';
 import { AdduserComponent } from './components/users/add-user/adduser.component';
 import { UsersComponent } from './components/users/users.component';
 import { ViewusersComponent } from './components/users/view-users/viewusers.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
     {"path":'', component:ProductsComponent},
     {"path":'create', component:AddProductsComponent},
     {"path":'update', component:UpdateProductsComponent},
+    {"path": 'view', component:ViewProductsComponent}
   ]},
   {"path": 'orders', children: [
     {"path":'', component:OrdersComponent},

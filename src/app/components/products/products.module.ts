@@ -5,14 +5,18 @@ import { UpdateProductsComponent } from './update-products/update-products.compo
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductsService } from 'src/app/services/products.service';
+import { ViewProductsComponent } from './view-products/view-products.component';
+import { ProductsComponent } from './products.component';
 
 
 
 
 @NgModule({
   declarations: [
+    ProductsComponent,
     AddProductsComponent,
-    UpdateProductsComponent
+    UpdateProductsComponent,
+    ViewProductsComponent
   ],
   imports: [
     CommonModule,

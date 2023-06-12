@@ -12,6 +12,7 @@ import { UsersModule } from './components/users/users.module';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductsModule } from './components/products/products.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -21,16 +22,16 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     FormComponent,
     LoginComponent,
-    UsersComponent,
     OrdersComponent,
-    ProductsComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UsersModule,
     ProductsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
     
   ],
   providers: [OrdersService],

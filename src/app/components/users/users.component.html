@@ -27,7 +27,7 @@
                             <td>{{user["address"]["city"]}}, {{user["address"]["state"]}}</td>
                             <td>{{user["contact"]}}</td>
                             <td>
-                                <button type="button" class="btn btn-sm btn-dark" >View Users</button>
+                                <button type="button" class="btn btn-sm btn-dark" (click)="openViewModal(userViewModal, user)">View Users</button>
                             </td>
                           </tr>                          
                         </tbody>
@@ -37,4 +37,8 @@
         </div>
     </div>
 </div>
+
+<ng-template #userViewModal let-modal>
+  <app-viewusers [userInfo]="userInfo" (closeModel)="closeModel(userViewModal)"></app-viewusers>
+</ng-template>
 

@@ -6,7 +6,7 @@
         "address" :{
             "street":"34 Norway Street",
             "city":"Los Angeles",
-            "state": "California",
+            "state": "CA",
             "country":"US",
             "pincode": 1400022
         },
@@ -21,7 +21,7 @@
         "address" :{
             "street":"301 Houston Street",
             "city":"Houston",
-            "state": "Texas",
+            "state": "TX",
             "country":"US",
             "pincode": 5566022
         },
@@ -36,7 +36,7 @@
         "address" :{
             "street":"301 Chicago Street",
             "city":"Chicago",
-            "state": "Illinois",
+            "state": "IL",
             "country":"US",
             "pincode": 8566022
         },
@@ -50,7 +50,7 @@
         "address" :{
             "street":"301 Chicago Street",
             "city":"Chicago",
-            "state": "Illinois",
+            "state": "IL",
             "country":"US",
             "pincode": 8566022
         },
@@ -64,7 +64,7 @@
         "address":{
             "street":"307 Palmilla Street",
             "city":"San Jose",
-            "state": "California",
+            "state": "CA",
             "country":"US",
             "pincode":956758
         },

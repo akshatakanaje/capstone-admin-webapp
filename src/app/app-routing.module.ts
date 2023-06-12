@@ -7,7 +7,6 @@ import { AddordersComponent } from './components/orders/add-orders/addorders.com
 import { OrdersComponent } from './components/orders/orders.component';
 import { UpdateOrdersComponent } from './components/orders/update-orders/update-orders.component';
 import { AddProductsComponent } from './components/products/add-products/add-products.component';
-import { CategoriesComponent } from './components/products/categories/categories.component';
 import { ProductsComponent } from './components/products/products.component';
 import { UpdateProductsComponent } from './components/products/update-products/update-products.component';
 import { AdduserComponent } from './components/users/add-user/adduser.component';
@@ -31,7 +30,6 @@ const routes: Routes = [
     {"path":'', component:ProductsComponent},
     {"path":'create', component:AddProductsComponent},
     {"path":'update', component:UpdateProductsComponent},
-    {"path":'categories', component:CategoriesComponent}
   ]},
   {"path": 'orders', children: [
     {"path":'', component:OrdersComponent},

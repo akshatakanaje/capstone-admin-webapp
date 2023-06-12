@@ -1,0 +1,66 @@
+[
+    {
+      "orderId": 3456789345,
+      "orderDate": "03 December 2021",
+      "orderStatus": "Pending",
+      "products": [
+        {
+          "productId": 1,
+          "productCode": "ADE-DIP-1054",
+          "productImg": "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX466_.jpg",
+          "productTitle": "Adefovir Dipivoxil",
+          "productDescription": "A list of pharmaceutical drug names",
+          "productCategory": "Drugs",
+          "price": 100,
+          "quantity": 4,
+          "totalPrice": 400
+        }
+      ],
+      "totalItems": 1,
+      "itemsSubTotal": 400,
+      "shipmentCharges": 50,
+      "totalAmount": 450,
+      "paymentStatus": 0,
+      "paymentStatusTile": "Pending",
+      "paymentMethod": 0,
+      "paymentMethodTitle": "Cash on Delivery (COD)",
+
+      "userId": 1,
+      "name": "John Snow",
+      "email" : "john.snow@gmail.com",
+      "contact": "9874563211",
+      "address": "ABC Ludhiana 1414001"
+    },
+    {
+        "orderId": 3111789345,
+        "orderDate": "05 April 2022",
+        "orderStatus": "Confirm",
+        "products": [
+          {
+            "productId": 1,
+            "productCode": "PRD-FIB-1054",
+            "productImg": "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX466_.jpg",
+            "productTitle": "fibroma", 
+            "productDescription": "Disease terms, with increasing specificity. A random subset of the OBO Human Disease Ontology",
+            "productCategory": "Diseases",
+            "price": 120,
+            "quantity": 2,
+            "totalPrice": 240
+          }
+        ],
+        "totalItems": 1,
+        "itemsSubTotal": 240,
+        "shipmentCharges": 50,
+        "totalAmount": 290,
+        "paymentStatus": 0,
+        "paymentStatusTile": "Confirm",
+        "paymentMethod": 0,
+        "paymentMethodTitle": "Cash on Delivery (COD)",
+
+        "userId": 1,
+        "name": "Will Smith",
+        "email" : "will.smith@gmail.com",
+        "contact": "9874563211",
+        "address": "ABC Ludhiana 1414001"
+      }
+  ]

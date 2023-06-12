@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from 'src/app/services/orders.service';
-// import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @Component({
@@ -11,7 +11,7 @@ import { OrdersService } from 'src/app/services/orders.service';
 export class OrdersComponent implements OnInit {
 
   public ordersList:any[] = [];
-  public orderInfo:any;
+  
 
   orderStatusIdx: number = 0;
   orderStatus: { name: string; value: number }[] = [
@@ -27,11 +27,11 @@ export class OrdersComponent implements OnInit {
   constructor(private ordersService: OrdersService) { }
 
   ngOnInit(): void {
+    this.ordersService.getAll().subscribe((response:any)=>{
+      this.ordersList=response;
+    })
   }
 
-  // openModal(modelRef:any, orderObj = null) {
-  //   this.modalService.open(modelRef, { size: "xl" });
-  //   this.orderInfo = orderObj;
-  // }
+
 
 }

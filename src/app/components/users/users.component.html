@@ -27,7 +27,9 @@
                             <td>{{user["address"]["city"]}}, {{user["address"]["state"]}}</td>
                             <td>{{user["contact"]}}</td>
                             <td>
-                                <button type="button" class="btn btn-sm btn-dark" (click)="openViewModal(userViewModal, user)">View Users</button>
+                              <button type="button" class="btn btn-sm btn-dark me-1" (click)="openModal(userModal, user)" >Update</button>
+                              <button type="button" class="btn btn-sm btn-dark me-1" (click)="openViewModal(userViewModal, user)">View Users</button>
+                              <button type="button" class="btn btn-sm btn-danger me-1" >Delete</button>
                             </td>
                           </tr>                          
                         </tbody>
@@ -38,7 +40,12 @@
     </div>
 </div>
 
+
 <ng-template #userViewModal let-modal>
   <app-viewusers [userInfo]="userInfo" (closeModel)="closeModel(userViewModal)"></app-viewusers>
 </ng-template>
+<ng-template #userModal let-modal>
+  <app-adduser [userInfo]="userInfo" (closeModel)="closeModel(userModal)"></app-adduser>
+</ng-template>
+
 

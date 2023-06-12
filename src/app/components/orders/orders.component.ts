@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { OrdersService } from 'src/app/services/orders.service';
 
 
@@ -11,7 +12,7 @@ import { OrdersService } from 'src/app/services/orders.service';
 export class OrdersComponent implements OnInit {
 
   public ordersList:any[] = [];
-  
+  public orderInfo:any;
 
   orderStatusIdx: number = 0;
   orderStatus: { name: string; value: number }[] = [
@@ -24,13 +25,44 @@ export class OrdersComponent implements OnInit {
   viewOrderIdx: number | undefined;
   orderModel: any;   
   
-  constructor(private ordersService: OrdersService) { }
+  constructor(private ordersService: OrdersService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.ordersService.getAll().subscribe((response:any)=>{
       this.ordersList=response;
     })
   }
+
+  openModal(modelRef:any, orderObj = null) {
+    this.modalService.open(modelRef, { size: "xl" });
+    this.orderInfo = orderObj;
+  }
+
+  changeOrderStatus(orderStatusIdx: number) {
+    this.orderStatusIdx = orderStatusIdx;
+   }
+ 
+   openViewModal(orderModel: any, viewOrderIdx: number) {
+     console.log(orderModel);    
+     this.viewOrderBool = true;
+     this.viewOrderIdx = viewOrderIdx;
+     this.orderModel = orderModel;
+   }
+ 
+   closeViewModal() {
+     delete this.viewOrderIdx;
+     delete this.orderModel;
+     this.viewOrderBool = false;
+   }
+   openOrderDialog(modelRef:any, orderObj = null) {
+    console.log(orderObj);    
+    this.modalService.open(modelRef,{ size: "xl" });
+    this.orderInfo = orderObj;
+  }
+
+   closeModel(modelRef:any) {
+    this.modalService.dismissAll(modelRef);
+  } 
 
 
 

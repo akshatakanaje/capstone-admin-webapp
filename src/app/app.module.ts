@@ -13,6 +13,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductsModule } from './components/products/products.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { OrdersModule } from './components/orders/orders.module';
 
 
 
@@ -21,20 +22,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     DashboardComponent,
     FormComponent,
-    LoginComponent,
-    OrdersComponent,
-   
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UsersModule,
     ProductsModule,
+    OrdersModule,
     HttpClientModule,
     NgbModule
     
   ],
-  providers: [OrdersService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,15 +3,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-add-products',
-  templateUrl: './add-products.component.html',
-  styleUrls: ['./add-products.component.css']
+  selector: 'app-add-medicines',
+  templateUrl: './add-medicines.component.html',
+  styleUrls: ['./add-medicines.component.css']
 })
-export class AddProductsComponent implements OnInit {
+export class AddMedicinesComponent implements OnInit {
 
-
-  productForm: FormGroup = new FormGroup({});
-  productModel: Products | undefined;
+  medicineForm: FormGroup = new FormGroup({});
+  medicineModel: Medicines | undefined;
   selectedImageIdx: number = 0;
   thumbnailImageIdx: number = 0;
   tempImageFiles: any[] = [];
@@ -19,7 +18,7 @@ export class AddProductsComponent implements OnInit {
   loader: boolean = false; 
 
   @Input()
-  public productInfo:any;
+  public medicineInfo:any;
 
   @Output()
   public closeModel: EventEmitter<void> = new EventEmitter<void>();
@@ -27,19 +26,19 @@ export class AddProductsComponent implements OnInit {
   constructor(private modalService: NgbModal, private fb:FormBuilder) { }
 
   ngOnInit(): void {  
-  if(this.productInfo) {
-    this.initialiseProductModal(this.productInfo);
+  if(this.medicineInfo) {
+    this.initialiseMedicineModal(this.medicineInfo);
   }else{
-    this.initialiseProductModal();
+    this.initialiseMedicineModal();
   }
 }
 
-initialiseProductModal(productObj: any = null) {
-  if (productObj == null) {
+initialiseMedicineModal(medicineObj: any = null) {
+  if (medicineObj == null) {
     this.updation = false;
-    this.productForm = this.fb.group({
-      productId: [],
-      productName: [null],
+    this.medicineForm = this.fb.group({
+      medicineId: [],
+      medicineName: [null],
       brandName: [null],
       form: [null],
       images: this.fb.array([]),
@@ -52,17 +51,17 @@ initialiseProductModal(productObj: any = null) {
     });
   } else {
     this.updation = true;
-    this.productForm = this.fb.group({
-      productId: [productObj.productId],
-      productName: [productObj.productName],
-      brandName: [productObj.brandName],
-      form: [productObj.form],
-      images: [productObj.images],
-      thumbnailImage: [productObj.thumbnailImage],
-      productMeasurementUnit: [productObj.productMeasurementUnit],
-      active: [productObj.active],
-      addedOn: [productObj.addedOn],
-      rating: [productObj.rating]
+    this.medicineForm = this.fb.group({
+      medicineId: [medicineObj.productId],
+      medicineName: [medicineObj.productName],
+      brandName: [medicineObj.brandName],
+      form: [medicineObj.form],
+      images: [medicineObj.images],
+      thumbnailImage: [medicineObj.thumbnailImage],
+      medicineMeasurementUnit: [medicineObj.productMeasurementUnit],
+      active: [medicineObj.active],
+      addedOn: [medicineObj.addedOn],
+      rating: [medicineObj.rating]
     });
   }
 }
@@ -79,7 +78,7 @@ removeImage(idx: number) {
 }
 
 changeThumbnailImageIdx(idx: number) {
-  this.productForm.patchValue({
+  this.medicineForm.patchValue({
     thumbnailImage: idx
   })
 }
@@ -100,11 +99,11 @@ checkImageFileType(event: any) {
 }
 
 
-export interface Products {
-  productId?: string;
-  productTitle?: string;
-  productCode?: string;
-  productDescription?: string;
+export interface Medicines {
+  medicineId?: string;
+  medicineTitle?: string;
+  medicineCode?: string;
+  medicineDescription?: string;
   price?: number;
   images?: string[];
   thumbnailImage?: number;
@@ -112,6 +111,5 @@ export interface Products {
   addedOn?: Date;
   rating?: number;
 }
-
 
 

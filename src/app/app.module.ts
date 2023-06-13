@@ -9,11 +9,11 @@ import { UsersComponent } from './components/users/users.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrdersService } from './services/orders.service';
 import { UsersModule } from './components/users/users.module';
-import { ProductsComponent } from './components/products/products.component';
-import { ProductsModule } from './components/products/products.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OrdersModule } from './components/orders/orders.module';
+import { MedicinesComponent } from './components/medicines/medicines.component';
+import { MedicinesModule } from './components/medicines/medicines.module';
 
 
 
@@ -22,13 +22,14 @@ import { OrdersModule } from './components/orders/orders.module';
     AppComponent,
     DashboardComponent,
     FormComponent,
-    LoginComponent
+    LoginComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UsersModule,
-    ProductsModule,
+    MedicinesModule,
     OrdersModule,
     HttpClientModule,
     NgbModule

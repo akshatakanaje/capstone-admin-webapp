@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-view-products',
-  templateUrl: './view-products.component.html',
-  styleUrls: ['./view-products.component.css']
+  selector: 'app-view-medicines',
+  templateUrl: './view-medicines.component.html',
+  styleUrls: ['./view-medicines.component.css']
 })
-export class ViewProductsComponent implements OnInit {
+export class ViewMedicinesComponent implements OnInit {
 
   @Input()
-  public productInfo:any;
+  public medicineInfo:any;
 
 
   @Output()
@@ -22,5 +22,4 @@ export class ViewProductsComponent implements OnInit {
   close() {
     this.closeModel.emit();
   }
-
 }

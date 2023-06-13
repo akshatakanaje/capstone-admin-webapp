@@ -5,7 +5,7 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <form [formGroup]="productForm" ngNativeValidate>
+  <form>
     <div class="modal-body">
       <div class="row">
         <div class="col-12 col-sm-4">
@@ -66,16 +66,16 @@
                       <strong>{{ idx + 1 }}</strong>. 
                       {{ imageFile.name || imageFile }}
                     </p>
-                    <span *ngIf="productForm.get('thumbnailImage')?.value === idx" class="text-sm text-muted">
+                    <span *ngIf="medicineForm.get('thumbnailImage')?.value === idx" class="text-sm text-muted">
                       Selected as Thumnail Image
                     </span>
                   </div>
                   <div class="d-flex align-items-center">
                     <button type="button" class="btn btn-primary btn-sm mr-2" (click)="changeThumbnailImageIdx(idx)"
                       [ngClass]="{
-                      'btn-success': productForm.get('thumbnailImage')?.value === idx
+                      'btn-success': medicineForm.get('thumbnailImage')?.value === idx
                     }">
-                      {{ productForm.get('thumbnailImage')?.value === idx ? 'Selected' : 'Select' }}
+                      {{ medicineForm.get('thumbnailImage')?.value === idx ? 'Selected' : 'Select' }}
                     </button>
                     <button type="button" class="btn btn-danger btn-sm" (click)="removeImage(idx)">
                       Remove
@@ -101,3 +101,4 @@
         </button>
       </div>
     </form>
+

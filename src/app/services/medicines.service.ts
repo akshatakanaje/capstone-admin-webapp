@@ -4,12 +4,11 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService {
+export class MedicinesService {
 
   constructor(private httpclient: HttpClient) { }
 
   getAll(){
-    return this.httpclient.get<any[]>('../../assets/json/products.json');
+    return this.httpclient.get<any[]>('../../assets/json/medicines.json');
   }
-  
 }

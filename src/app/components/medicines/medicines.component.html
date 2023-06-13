@@ -5,11 +5,11 @@
                 <div class="card-header bg-white border-0">
                     <div class="row">
                         <div class="col-12 col-sm-6">
-                            <h4>Products</h4>
+                            <h4>Medicines</h4>
                         </div>
                         <div class="col-12 col-sm-6">
                             <div class="d-flex justify-content-end align-items-center">
-                            <button class="btn btn-dark me-1"  (click)="openModal(productModal)">Add Product</button>
+                            <button class="btn btn-dark me-1"  (click)="openModal(medicineModal)">Add Medicine</button>
                         </div>
                         </div>
                     </div>
@@ -29,16 +29,16 @@
                               </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let prod of productList; index as idx">
+                            <tr *ngFor="let med of medicineList; index as idx">
                                 <td>{{ idx + 1 }}</td>
-                                <td>{{ prod["Name"] }}</td>
-                                <td class="text-wrap">{{ prod["brandName"] }}</td>
-                                <td class="text-wrap">{{ prod["measurementUnit"] }}</td>
-                                <td >{{ prod["form"] }}</td>
+                                <td>{{ med["Name"] }}</td>
+                                <td class="text-wrap">{{ med["brandName"] }}</td>
+                                <td class="text-wrap">{{ med["measurementUnit"] }}</td>
+                                <td >{{ med["form"] }}</td>
                                 <td>
-                                  <button type="button" class="btn btn-sm btn-dark me-1" (click)="openImageModal(viewImageModal, prod.images, prod.thumbnailImage)">View Images</button>
-                                  <button type="button" class="btn btn-sm btn-dark me-1" (click)="openViewModal(productViewModal, prod)">View Details</button>
-                                  <button type="button" class="btn btn-sm btn-dark me-1" (click)="openModal(productModal, prod)">Update</button>
+                                  <button type="button" class="btn btn-sm btn-dark me-1" (click)="openImageModal(viewImageModal, med.images, med.thumbnailImage)">View Images</button>
+                                  <button type="button" class="btn btn-sm btn-dark me-1" (click)="openViewModal(medicineViewModal, med)">View Details</button>
+                                  <button type="button" class="btn btn-sm btn-dark me-1" (click)="openModal(medicineModal, med)">Update</button>
                                   <button type="button" class="btn btn-sm btn-danger me-1">Delete</button>
                                 </td>
                               </tr>                       
@@ -51,12 +51,12 @@
 </div>
 
 <!-- create / update product-->
-<ng-template #productViewModal let-modal>
-    <app-view-products [productInfo]="productInfo" (closeModel)="closeModel(productViewModal)"></app-view-products>
+<ng-template #medicineViewModal let-modal>
+    <app-view-medicines [medicineInfo]="medicineInfo" (closeModel)="closeModel(medicineViewModal)"></app-view-medicines>
 </ng-template>
 
-<ng-template #productModal let-modal>
-    <app-add-products [productInfo]="productInfo" (closeModel)="closeModel(productModal)"></app-add-products>
+<ng-template #medicineModal let-modal>
+    <app-add-medicines [medicineInfo]="medicineInfo" (closeModel)="closeModel(medicineModal)"></app-add-medicines>
 </ng-template>
 
 <ng-template  #viewImageModal let-modal>
@@ -92,3 +92,4 @@
         </div> -->
       </div>
 </ng-template>
+

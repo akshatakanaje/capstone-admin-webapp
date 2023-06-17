@@ -87,6 +87,41 @@ export class AddordersComponent implements OnInit {
     }
   }
 
+
+  onSubmit() {
+    if(this.orderForm.valid) {
+      if(this.orderForm.get('orderId')) {
+        this.handleUpdate();
+      } else{
+        this.handleCreate();
+      }
+    } else{
+      this.errResponse = "Unable to submit form, Invalid form data";
+      console.log("Invalid Form");
+    }
+  }
+
+  handleCreate() {
+    this.orderService.save(this.orderForm.getRawValue()).subscribe((response:any)=>{
+      console.log(response);
+      window.location.href ="/orders";
+      this.close();
+      },error =>{
+        this.errResponse = error.error.message;
+      })
+  }
+
+  handleUpdate() {
+    this.orderService.update(this.orderForm.getRawValue()).subscribe((response:any)=>{
+      console.log(response);
+      window.location.href ="/orders";
+      this.close();
+      },error =>{
+        this.errResponse = error.error.message;
+      })
+  }
+
+
   close() {
     this.closeModel.emit();
   }

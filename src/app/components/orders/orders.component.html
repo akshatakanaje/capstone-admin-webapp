@@ -8,9 +8,6 @@
                         <div class="d-flex flex-column align-items-start">
                           <h4>Orders</h4>
                           <div class="col-12 col-sm-12">
-                            <div class="d-flex justify-content-end align-items-center">
-                            <button class="btn btn-dark me-1"  (click)="openModal(orderModal)">Add Orders</button>
-                          </div>
                           <div class="d-flex flex-wrap">
                             <button type="button" class="btn btn-sm me-2" *ngFor="let status of orderStatus; index as idx" [ngClass]="{
                               'btn-dark': orderStatusIdx === status.value,

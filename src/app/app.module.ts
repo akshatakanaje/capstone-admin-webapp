@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OrdersModule } from './components/orders/orders.module';
 import { MedicinesComponent } from './components/medicines/medicines.component';
 import { MedicinesModule } from './components/medicines/medicines.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -32,7 +33,8 @@ import { MedicinesModule } from './components/medicines/medicines.module';
     MedicinesModule,
     OrdersModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

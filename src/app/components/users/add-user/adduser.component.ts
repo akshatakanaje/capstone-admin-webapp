@@ -85,6 +85,40 @@ export class AdduserComponent implements OnInit {
       }
     } 
 
+    onSubmit() {
+      if(this.userForm.valid) {
+          if(this.userForm.get('userId')?.value != null) {  //if userId exists then updateuser else createuser
+            this.handleUpdate();
+          } else{
+            this.handleCreate();
+          }
+      } else{
+        this.errResponse = "Unable to submit form, Invalid form data";
+        console.log("Invalid Form");
+      }
+    }
+
+    handleCreate() {
+      this.userService.save(this.userForm.getRawValue()).subscribe((response:any)=>{
+        console.log(response);
+        // this.router.navigateByUrl('/users');
+        window.location.href ="/users";
+        this.close();
+      },error =>{
+        this.errResponse = error.error.message;
+      })
+    }
+
+    handleUpdate() {
+      this.userService.update(this.userForm.getRawValue()).subscribe((response:any)=>{
+        console.log(response);
+        window.location.href ="/users";
+        this.close();
+      },error =>{
+        this.errResponse = error.error.message;
+      })
+    }
+
     close() {
       this.closeModel.emit();
     }

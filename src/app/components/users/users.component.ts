@@ -15,13 +15,14 @@ export class UsersComponent implements OnInit {
   constructor(private usersService: UsersService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.usersService.getAll().subscribe((response:any)=>{
-      this.usersList = response;
-    })
+    // this.usersService.getAll().subscribe((response:any)=>{
+    //   this.usersList = response; 
+    // })
+    this.getAllUser();
   }
 
   openModal(modelRef:any, userObj = null) {
-    this.modalService.open(modelRef, { size: "xl" });
+    this.modalService.open(modelRef, { size: "l" });
     this.userInfo = userObj;
   }
 
@@ -34,5 +35,17 @@ export class UsersComponent implements OnInit {
     this.modalService.dismissAll(modelRef);
   }
 
+  getAllUser() {
+    this.usersService.getAll().subscribe((response:any ) => { //response is nothing but user data
+      this.usersList = response;  
+      console.log(response);
+    });
+  }
+
+  deleteUser(userId:any) {
+    this.usersService.delete(userId).subscribe((response:any ) => {
+      this.getAllUser();
+    });
+  }
 
 }

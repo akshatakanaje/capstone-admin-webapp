@@ -5,7 +5,7 @@
     </button>
   </div>
   <div class="modal-body">
-      <form>
+      <form [formGroup]="userForm" ngNativeValidate  (ngSubmit)="onSubmit()">
           <div class="modal-body">
               <div class="form-group col mt-2">
                   <label>Full Name</label>

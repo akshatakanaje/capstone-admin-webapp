@@ -5,6 +5,7 @@ import { ListusersComponent } from './list-users/listusers.component';
 import { ViewusersComponent } from './view-users/viewusers.component';
 import { UsersService } from 'src/app/services/users.service';
 import { UsersComponent } from './users.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -16,7 +17,7 @@ import { UsersComponent } from './users.component';
     ViewusersComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, ReactiveFormsModule
   ],
   providers:[UsersService]
 })
